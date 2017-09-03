@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -24,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +46,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="baseApp\karma.conf.js" />
+    <Content Include="baseApp\protractor.conf.js" />
+    <Content Include="baseApp\src\app\app.component.css" />
+    <Content Include="baseApp\src\app\app.component.html" />
+    <Content Include="baseApp\src\app\home\welcome.component.html" />
+    <Content Include="baseApp\src\app\products\product-detail.component.css" />
+    <Content Include="baseApp\src\app\products\product-detail.component.html" />
+    <Content Include="baseApp\src\app\products\product-list.component.css" />
+    <Content Include="baseApp\src\app\products\product-list.component.html" />
+    <Content Include="baseApp\src\app\shared\star.component.css" />
+    <Content Include="baseApp\src\app\shared\star.component.html" />
+    <Content Include="baseApp\src\assets\images\logo.jpg" />
+    <Content Include="baseApp\src\favicon.ico" />
+    <Content Include="baseApp\src\index.html" />
+    <Content Include="baseApp\src\styles.css" />
     <Content Include="bower.json" />
     <Content Include="bower_components\bootstrap-social\.bower.json" />
     <Content Include="bower_components\bootstrap-social\.editorconfig" />
@@ -365,6 +382,18 @@
     <Content Include="less\sb-admin-2.less" />
     <Content Include="less\variables.less" />
     <Content Include="LICENSE" />
+    <Content Include="baseApp\.angular-cli.json" />
+    <Content Include="baseApp\.editorconfig" />
+    <Content Include="baseApp\.gitignore" />
+    <Content Include="baseApp\.vscode\settings.json" />
+    <Content Include="baseApp\e2e\tsconfig.e2e.json" />
+    <Content Include="baseApp\package.json" />
+    <Content Include="baseApp\README.md" />
+    <Content Include="baseApp\src\api\products\products.json" />
+    <Content Include="baseApp\src\tsconfig.app.json" />
+    <Content Include="baseApp\src\tsconfig.spec.json" />
+    <Content Include="baseApp\tsconfig.json" />
+    <Content Include="baseApp\tslint.json" />
     <None Include="packages.config" />
     <Content Include="README.md" />
     <None Include="Web.Debug.config">
@@ -838,11 +867,40 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="baseApp\e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="baseApp\e2e\app.po.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\app.component.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\app.module.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\home\welcome.component.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\products\product-detail.component.spec.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\products\product-detail.component.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\products\product-guard.service.spec.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\products\product-guard.service.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\products\product-list.component.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\products\product.module.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\products\product.service.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\products\product.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\shared\convert-to-spaces.pipe.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\shared\shared.module.ts" />
+    <TypeScriptCompile Include="baseApp\src\app\shared\star.component.ts" />
+    <TypeScriptCompile Include="baseApp\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="baseApp\src\environments\environment.ts" />
+    <TypeScriptCompile Include="baseApp\src\main.ts" />
+    <TypeScriptCompile Include="baseApp\src\polyfills.ts" />
+    <TypeScriptCompile Include="baseApp\src\test.ts" />
+    <TypeScriptCompile Include="baseApp\src\typings.d.ts" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
